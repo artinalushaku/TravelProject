@@ -21,7 +21,7 @@ const transporter = nodemailer.createTransport({
     }
   
     const mailOptions = {
-      from: 'travelbani48@gmail.com', 
+      from: 'artinalushaku@gmail.com', 
       to: email, 
       subject: 'Abonimi juaj u realizua me sukses!',
       text: 'Jeni abonuar me sukses! Do të njoftoheni për ofertat më të mira çdo javë.',
@@ -55,7 +55,7 @@ const transporter = nodemailer.createTransport({
   
       const staffEmailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'travelbani48@gmail.com',
+        to: 'artinalushaku@gmail.com',
         subject: 'Rezervim i ri',
         text: `Ofertë e rezervuar nga klienti: ${username}
           Titulli: ${item.titulli}
