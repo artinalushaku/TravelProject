@@ -16,7 +16,7 @@ const addMaqedoniPrices = async (req, res) => {
     const { lloji_dhomes, sherbimi, gjat_sezones, jasht_sezones } = req.body;
 
     try{
-        newMaqedoniPrices = await MaqedoniPrices.create({
+       let newMaqedoniPrices = await MaqedoniPrices.create({
             lloji_dhomes, 
             sherbimi, 
             gjat_sezones, 
