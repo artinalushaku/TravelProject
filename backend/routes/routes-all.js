@@ -20,9 +20,24 @@ const {
     getAllDubaiPrices, addDubaiPrice, deleteDubaiPrice, updateDubaiPrice 
   } = require('../controllers/dubaiPricesController');
 
+ 
+  const { 
+    getAllMaqedoniPrices, addMaqedoniPrices, deleteMaqedoniPrices, updateMaqedoniPrices 
+  } = require('../controllers/maqedoniPricesController');
 
+  const { 
+    getAllImages, addImage, deleteImage, updateImage 
+  } = require('../controllers/sliderHomeController');
 
-
+  const { 
+    getAllHotels, addCard, deleteHotel, updateCard 
+  } = require('../controllers/stambollCardsController');
+  const { 
+    getAllAranzhmanet, updateAranzhmani, deleteAranzhmanet, addAranzhmanet
+  } = require('../controllers/aranzhmanetController');
+  const { 
+    getAllAirports, addAirports, deleteAirport, updateAirport
+  } = require('../controllers/airportsController');
 
 
 
