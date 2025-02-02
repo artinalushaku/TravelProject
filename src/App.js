@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Register from './components/Register';
+
+import Home from './components/Home/Home';
+import Nav from './components/layout/nav';
 import Turqi from './components/Turqi/Turqi';
+
 
 
 const App = () => {
@@ -14,8 +15,8 @@ const App = () => {
          
           <Route path="/nav" element={<Nav />} />
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/turqi" element={<Turqi/>}/>
+          <Route path="/turqi" element={<Turqi />} />
+          
 
         </Routes>
       </div>

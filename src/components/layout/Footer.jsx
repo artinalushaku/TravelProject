@@ -106,11 +106,11 @@ function Footer() {
   
         {/* Kolona 4 */}
         <div>
-          <h3 className="font-semibold mb-4">Bani Travel | Kosova</h3>
+          <h3 className="font-semibold mb-4"> Travel App| Kosova</h3>
           <ul className="space-y-2">
-            <li>Bani Travel | Kosova</li>
-            <li>Call Center: +383 45 963 828</li>
-            <li>info@Bani-travel.com</li>
+            <li> Travel App | Kosova</li>
+            <li>Call Center: +383 45 883 828</li>
+            <li>info@App-travel.com</li>
           </ul>
         </div>
       </div>
