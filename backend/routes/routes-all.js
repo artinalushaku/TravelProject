@@ -1,89 +1,75 @@
 const express = require('express');
-const router = express.Router();
+const { 
+  registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
+} = require('../controllers/userController');
+const { 
+  getAllTravelPlans, addTravelPlan, deleteTravelPlan, updateTravelPlan 
+} = require('../controllers/travelController');
+const { 
+  getAllRoomPrices, addRoomPrice, deleteRoomPrice, updateRoomPrice 
+} = require('../controllers/roomPricesController');
+const { 
+  getAllDubaiPrices, addDubaiPrice, deleteDubaiPrice, updateDubaiPrice 
+} = require('../controllers/dubaiPricesController');
+const { 
+  getAllMaqedoniPrices, addMaqedoniPrices, deleteMaqedoniPrices, updateMaqedoniPrices 
+} = require('../controllers/maqedoniPricesController');
+const { 
+  getAllImages, addImage, deleteImage, updateImage 
+} = require('../controllers/sliderHomeController');
+const { 
+  getAllHotels, addCard, deleteHotel, updateCard 
+} = require('../controllers/stambollCardsController');
+const { 
+  getAllAranzhmanet, updateAranzhmani, deleteAranzhmanet, addAranzhmanet
+} = require('../controllers/aranzhmanetController');
+const { 
+  getAllAirports, addAirports, deleteAirport, updateAirport
+} = require('../controllers/airportsController');
+const { 
+  getAllShtetet, addShtetet, deleteShtetet, updateShteti
+} = require('../controllers/shtetetController');
+const { 
+  getAllHurghada, addCardHurgada, deleteHurgada, updateCardHurgada 
+} = require('../controllers/hurghadasController');
+const { 
+  getAllKapodakia, addCardKapodakia, deleteKapodakia, updateCardKapodakia 
+} = require('../controllers/kapodakiaCards');
+const { 
+  getAllQytetet, addQytetet, deleteQytetet, updateQytetet
+} = require('../controllers/qytetetController');
+
+const { getLogs
+} = require('../controllers/logController');
+const { subscribe
+} = require('../controllers/nodeMailerController');
 
 const { 
-    registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
-  } = require('../controllers/userController');
+  getAllGreqiImages, addGreqiImage, deleteGreqiImage,
+} = require('../controllers/GreqiSlider');
 
-  const { getLogs
-  } = require('../controllers/logController');
-
-  const { 
-    getAllTravelPlans, addTravelPlan, deleteTravelPlan, updateTravelPlan 
-  } = require('../controllers/travelController');
-  
-  const { 
-    getAllRoomPrices, addRoomPrice, deleteRoomPrice, updateRoomPrice 
-  } = require('../controllers/roomPricesController');
-
-  const { 
-    getAllDubaiPrices, addDubaiPrice, deleteDubaiPrice, updateDubaiPrice 
-  } = require('../controllers/dubaiPricesController');
-
- 
-  const { 
-    getAllMaqedoniPrices, addMaqedoniPrices, deleteMaqedoniPrices, updateMaqedoniPrices 
-  } = require('../controllers/maqedoniPricesController');
-
-  const { 
-    getAllImages, addImage, deleteImage, updateImage 
-  } = require('../controllers/sliderHomeController');
-
-  const { 
-    getAllHotels, addCard, deleteHotel, updateCard 
-  } = require('../controllers/stambollCardsController');
-  const { 
-    getAllAranzhmanet, updateAranzhmani, deleteAranzhmanet, addAranzhmanet
-  } = require('../controllers/aranzhmanetController');
-  const { 
-    getAllAirports, addAirports, deleteAirport, updateAirport
-  } = require('../controllers/airportsController');
-
-  const { 
-    getAllShtetet, addShtetet, deleteShtetet, updateShteti
-  } = require('../controllers/shtetetController'); 
-
-  const { 
-    getAllQytetet, addQytetet, deleteQytetet, updateQytetet
-  } = require('../controllers/qytetetController');
-
- 
+const { 
+  getAllImagesBullgari, addImageBullgari, deleteImageBullgari, updateImageBullgari
+} = require('../controllers/bullgariController');
 
 
+const router = express.Router();
+const { isAuthenticated } = require('../middlewares/authMiddleware');
 
 
-
- 
-  
-  
-  const { abonohu, reserveOffer
-  } = require('../controllers/nodeMailerController');
-  
-  
-  const { sendContactEmail
-  } = require('../controllers/nodeKontaktForm');
-  
-  router.post('/reserveOffer', reserveOffer);
-  router.post('/abonohu', abonohu);
-  
-  router.post('/contact', sendContactEmail);
+const { abonohu, reserveOffer
+} = require('../controllers/nodeMailerController');
 
 
+const { sendContactEmail
+} = require('../controllers/nodeKontaktForm');
+
+router.post('/reserveOffer', reserveOffer);
+router.post('/abonohu', abonohu);
+
+router.post('/contact', sendContactEmail);
 
 
-
-
-
-
-
-
-
-
-
-
-  // User routes
-  
-const { isAuthenticated } = require('../middleware/authMiddleware');
 
 // User routes
 router.post('/register',  registerUser);
@@ -101,7 +87,7 @@ router.get('/logs', getLogs); // Fetch all logs
 
 
 // Travel plans routes
-router.post('/travel-plans', isAuthenticated, addTravelPlan);
+router.post('/travel-plans', /*isAuthenticated  ,*/ addTravelPlan);
 router.get('/travel-plans', getAllTravelPlans);
 router.delete('/travel-plans/:id', isAuthenticated, deleteTravelPlan);
 router.put('/travel-plans/:id', isAuthenticated, updateTravelPlan);
@@ -112,11 +98,30 @@ router.get('/images', getAllImages);
 router.delete('/images-delete/:id', isAuthenticated, deleteImage);
 router.put('/images-update/:id', isAuthenticated, updateImage);
 
+
+router.post('/bullgari/add-images', addImageBullgari);
+router.get('/bullgari/images', getAllImagesBullgari);
+router.delete('/bullgari/images-delete/:id', isAuthenticated, deleteImageBullgari);
+router.put('/bullgari/images-update/:id', isAuthenticated, updateImageBullgari);
+
 // stamboll Cards routes
 router.post('/add-cards', isAuthenticated, addCard);
 router.get('/cards', getAllHotels);
 router.delete('/cards-delete/:id', isAuthenticated, deleteHotel);
 router.put('/cards-update/:id', isAuthenticated, updateCard);
+
+//hurghada cards routes
+router.post('/hurghada/add-cards', isAuthenticated, addCardHurgada);
+router.get('/hurghada/cards', getAllHurghada);
+router.delete('/hurghada/cards-delete/:id', isAuthenticated, deleteHurgada);
+router.put('/hurghada/cards-update/:id', isAuthenticated, updateCardHurgada);
+
+//kapodakia cards routes
+router.post('/kapodakia/add-cards', isAuthenticated, addCardKapodakia);
+router.get('/kapodakia/cards', getAllKapodakia);
+router.delete('/kapodakia/cards-delete/:id', isAuthenticated, deleteKapodakia);
+router.put('/kapodakia/cards-update/:id', isAuthenticated, updateCardKapodakia);
+
 
 // Room prices routes
 router.post('/add-room-price', isAuthenticated, addRoomPrice);
@@ -158,5 +163,8 @@ router.delete('/qytetet-delete/:id', isAuthenticated, deleteQytetet);
 router.put('/qytetet-update/:id', isAuthenticated, updateQytetet);
 router.get('/qytetet', getAllQytetet);
 
+router.post('/add-greqi-image', addGreqiImage);
+router.delete('/greqi-image-delete/:id', isAuthenticated, deleteGreqiImage);
+router.get('/greqi-images', getAllGreqiImages);
 
 module.exports = router;
