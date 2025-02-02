@@ -1,10 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+// import { FaPhoneAlt, FaWhatsapp, FaViber, FaHeadset, FaCheckCircle } from 'react-icons/fa';
+import Footer from '../layout/Footer';
+import Table from '../Table';
+import axiosInstance from '../../axiosInstance';
 
 function Turqi() {
   const [roomPrices, setRoomPrices] = useState([]);
   const [message, setMessage] = useState('');
 
 
+  useEffect(() => {
+    const fetchRoomPrices = async () => {
+      try {
+        const response = await axiosInstance.get('/room-price');
+        setRoomPrices(response.data);
+      } catch (error) {
+        console.error('Error fetching room prices:', error);
+        setMessage('There was an error fetching room prices.');
+      }
+    };
+
+    fetchRoomPrices();
+  }, []);
 
   return (
     <>
@@ -92,6 +110,12 @@ function Turqi() {
 
 
 
+      <Table  
+        perfshihet={['Akomodin',"Mëngjesi", "Spa center", "Pishina", "Aqua Park", "Parking", "WI-FI"]} 
+        nukPerfshihet={["Transferi", "Shërbimet shtesë"]}
+      />
+
+      <Footer/>
     </>
   );
 }
