@@ -9,6 +9,7 @@ import Turqi from './components/Turqi/Turqi';
 import Bullgari from './components/Bullgari/Bullgari';
 import Greqi from './components/Greqi/Greqi';
 import FestateFundvitit from './components/FestaFundVitit/FestateFundvitit';
+import VisitKosova from './components/VisitKosova/VisitKosova';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/turqi" element={<Turqi />} />
             <Route path="/bullgari" element={<Bullgari />} />
             <Route path="/greqi" element={<Greqi />} />
+            <Route path="/VisitKosova" element={<VisitKosova />} />
             
             <Route path="/festateFundvitit" element={<FestateFundvitit />} />
           
