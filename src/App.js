@@ -30,7 +30,7 @@ const App = () => {
             <Route path="/turqi" element={<Turqi />} />
             <Route path="/bullgari" element={<Bullgari />} />
             <Route path="/greqi" element={<Greqi />} />
-            <Route path="/Kontakt" element={<Kontakt />} />
+            <Route path="/Kontakt" element={<kontakt />} />
             <Route path="/maqedoni" element={<Maqedoni />} />
             <Route path="/festateFundvitit" element={<FestateFundvitit />} />
             <Route path="/europecitybreak" element={<EuropeCityBreak />} />
