@@ -172,6 +172,8 @@ const loginUser = (req, res, next) => {
       res.status(500).json({ error: err.message });
     }
   };
+ 
   
   module.exports = { registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers };
 
+ 

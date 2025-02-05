@@ -45,11 +45,13 @@ app.set('trust proxy', 1);
 // CORS setup
 const allowedOrigins = [
   'http://localhost:3000',
+  'http://localhost:3002',
   'https://travelapp-virid.vercel.app',
   'http://localhost:5000',
   'https://backend1-lt5m.onrender.com',
 
 ];
+
 
 app.use(
   cors({
@@ -64,6 +66,8 @@ app.use(
     credentials: true,
   })
 );
+
+
 
 
 app.use((req, res, next) => {

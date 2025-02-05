@@ -40,7 +40,8 @@ import KapodakiaCards from './aDashboard/tables/KapodakiaCards';
 import AddAranzhmanet from './aDashboard/aranzhmanet/AddAranzhmanet';
 import ManageAranzhmanet from './aDashboard/aranzhmanet/ManageAranzhmanet';
 
-
+import AddAirport from './aDashboard/airports/AddAirport';
+import ManageAirports from './aDashboard/airports/ManageAirports';
 
 import AddShtetin from './aDashboard/shtetet/AddShtetin';
 import ManageShtetet from './aDashboard/shtetet/ManageShtetet';
@@ -50,7 +51,7 @@ import ManageQytetet from './aDashboard/qytetet/ManageQytetet';
 
 
 import ManageLogs from './aDashboard/Logs/Logs';
-
+import SliderBullgari from './aDashboard/tables/SliderBullgari';
 
 import Kontakt from './components/Kontakt/Kontakt';
 
@@ -76,16 +77,28 @@ const App = () => {
             <Route path="/dashboard" element={<ProtectedRoute><Dashboard /> </ProtectedRoute>} />
             <Route path="/dashboard/AddUser" element={<ProtectedRoute><AddUser /></ProtectedRoute>} />
             <Route path="/dashboard/ManageUser" element={<ProtectedRoute><ManageUser /></ProtectedRoute>} />
-          
+            <Route path="/dashboard/ManageHomeTable" element={<ProtectedRoute><ManageHomeTable /></ProtectedRoute>} />
+            <Route path="/dashboard/GreqiSlider" element={<ProtectedRoute><GreqiSlider /></ProtectedRoute>} />
+            <Route path="/dashboard/TurqiTable" element={<ProtectedRoute><TurqiTable /></ProtectedRoute>} />
+            <Route path="/dashboard/DubaiTable" element={<ProtectedRoute><DubaiTable /></ProtectedRoute>} />
+            <Route path="/dashboard/SliderManage" element={<ProtectedRoute><SliderManage /></ProtectedRoute>} />
+            <Route path="/dashboard/ManageCardsStamboll" element={<ProtectedRoute><ManageCardsStamboll /></ProtectedRoute>} />
+            <Route path="/dashboard/HurghadaCards" element={<ProtectedRoute><HurghadaCards /></ProtectedRoute>} />
+            <Route path="/dashboard/KapodakiaCards" element={
+            <ProtectedRoute>
+              <KapodakiaCards />
+            </ProtectedRoute>
+          } />
 
             <Route path="/dashboard/Logs" element={<ProtectedRoute><ManageLogs /></ProtectedRoute>} />
-           
+            <Route path="/dashboard/SliderBullgari" element={<ProtectedRoute><SliderBullgari /></ProtectedRoute>} />
 
 
             <Route path="/dashboard/AddAranzhmanet" element={<ProtectedRoute><AddAranzhmanet /></ProtectedRoute>} />
             <Route path="/dashboard/ManageAranzhmanet" element={<ProtectedRoute><ManageAranzhmanet /></ProtectedRoute>} />
 
-         
+            <Route path="/dashboard/AddAirport" element={<ProtectedRoute><AddAirport /></ProtectedRoute>} />
+            <Route path="/dashboard/ManageAirports" element={<ProtectedRoute><ManageAirports /></ProtectedRoute>} />
 
             <Route path="/dashboard/AddShtetin" element={<ProtectedRoute><AddShtetin /></ProtectedRoute>} />
             <Route path="/dashboard/ManageShtetet" element={<ProtectedRoute><ManageShtetet /></ProtectedRoute>} />
