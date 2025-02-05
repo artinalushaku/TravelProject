@@ -19,7 +19,7 @@ const sendContactEmail = async (req, res) => {
 
   const mailOptions = {
     from: email,  
-    to: 'artinalushaku@gmail.com',  
+    to: 'rinaademaj@gmail.com',  
     subject: 'Mesazh nga formulari i kontaktit',
     text: `
       Emri: ${name}
