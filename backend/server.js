@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
@@ -18,37 +17,13 @@ const routes = require('./routes/routes-all');
 const app = express();
 app.set('trust proxy', 1);
 
-// const limiter = rateLimit({
-//   windowMs: 15 * 60 * 1000, 
-//   max: 500, 
-// });
-// app.use(limiter);
-
-// app.use((req, res, next) => {
-//   if (req.ip === '127.0.0.1') {
-//     return next(); 
-//   }
-//   limiter(req, res, next);
-// });
-
-// const authLimiter = rateLimit({
-//   windowMs: 15 * 60 * 1000,
-//   max: 200, 
-// });
-
-// app.use('/api/auth', authLimiter);
 
 
-// Set security headers
-// app.use(helmet());
 
 // CORS setup
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3002',
-  'https://travelapp-virid.vercel.app',
-  'http://localhost:5000',
-  'https://backend1-lt5m.onrender.com',
 
 ];
 

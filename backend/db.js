@@ -1,41 +1,35 @@
-require('dotenv').config();
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-  }
-);
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+  host: process.env.DB_HOST,
+  dialect: 'mysql',
+  port:process.env.PORT,
+  logging: false, 
+  pool: {
+    max: 10, 
+    min: 0,  
+    acquire: 30000, 
+    idle: 10000, 
+  },
+  dialectOptions: {
+    // ssl: {
+    //   rejectUnauthorized: false, 
+    // },
+  },
+});
 
-const createDatabase = async () => {
+(async () => {
   try {
-    const connection = new Sequelize(
-      '',
-      process.env.DB_USER,
-      process.env.DB_PASSWORD,
-      {
-        host: process.env.DB_HOST,
-        dialect: process.env.DB_DIALECT,
-      }
-    );
-    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\`;`);
-    console.log('Databaza është krijuar ose ekziston.');
-
     await sequelize.authenticate();
-    console.log('Lidhja me bazën e të dhënave është e suksesshme.');
+    console.log('Connection has been established successfully.');
 
-    // Krijo tabelat menjehere pas krijimit te databazes
+
     await sequelize.sync();
     console.log('Tabela(t) janë krijuar në MySQL.');
-  } catch (error) {
-    console.error('Gabim gjatë krijimit të databazës ose tabelës:', error);
-  }
-};
 
-createDatabase();
+  } catch (error) {
+    console.error('Unable to connect to the database:', error.message);
+  }
+})();
 
 module.exports = sequelize;

@@ -2,8 +2,7 @@ const express = require('express');
 const { 
   registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
 } = require('../controllers/userController');
-const { 
-  getAllTravelPlans, addTravelPlan, deleteTravelPlan, updateTravelPlan 
+const {  getAllTravelPlans, addTravelPlan, deleteTravelPlan, updateTravelPlan 
 } = require('../controllers/travelController');
 const { 
   getAllRoomPrices, addRoomPrice, deleteRoomPrice, updateRoomPrice 
