@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../db'); 
-const RoomPrices = sequelize.define('RoomPrices', {
+
+const TurqiPrices = sequelize.define('TurqiPrices', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -25,4 +26,4 @@ const RoomPrices = sequelize.define('RoomPrices', {
   }
 });
 
-module.exports = RoomPrices;
+module.exports = TurqiPrices;
