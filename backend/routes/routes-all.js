@@ -1,11 +1,6 @@
 const express = require('express');
 
-const {
-  getAllTurqiPrices,
-  addTurqiPrice,
-  deleteTurqiPrice,
-  updateTurqiPrice
-} = require('../controllers/turqiPricesController');
+
 
 const { 
   registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
@@ -128,11 +123,6 @@ router.post('/kapodakia/add-cards', isAuthenticated, addCardKapodakia);
 router.get('/kapodakia/cards', getAllKapodakia);
 router.delete('/kapodakia/cards-delete/:id', isAuthenticated, deleteKapodakia);
 router.put('/kapodakia/cards-update/:id', isAuthenticated, updateCardKapodakia);
-// Turqi prices routes
-router.post('/add-turqi-price', isAuthenticated, addTurqiPrice);
-router.get('/turqi-price', getAllTurqiPrices);
-router.delete('/turqi-prices-delete/:id', isAuthenticated, deleteTurqiPrice);
-router.put('/turqi-prices-update/:id', isAuthenticated, updateTurqiPrice);
 
 
 // Room prices routes
