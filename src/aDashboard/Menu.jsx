@@ -99,14 +99,7 @@ function Menu() {
             </Link>
           </li>
 
-          <li>
-            <Link
-              to="/dashboard/GreqiSlider"
-              className="block px-4 py-2 text-blue-500 font-bold hover:text-blue-700 hover:bg-gray-100"
-            >
-              GreqiSlider
-            </Link>
-          </li>
+      
 
           <li>
             <Link
