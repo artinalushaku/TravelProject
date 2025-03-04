@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation  } from 'react-rout
 
 
 //Components import
+
+
 import Home from './components/Home/Home';
 import Login from './components/LoginRegister/Login';
 import Register from './components/LoginRegister/Register';
@@ -66,6 +68,8 @@ const App = () => {
       
         <div className='overflow-hidden'>
           <Routes>
+         
+
             <Route path="/" element={<Home />} />
             <Route path="/turqi" element={<Turqi />} />
             <Route path="/bullgari" element={<Bullgari />} />

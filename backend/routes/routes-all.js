@@ -2,7 +2,9 @@ const express = require('express');
 
 
 
+
 const { 
+  
   registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
 } = require('../controllers/userController');
 const {  getAllTravelPlans, addTravelPlan, deleteTravelPlan, updateTravelPlan 
@@ -168,5 +170,9 @@ router.get('/qytetet', getAllQytetet);
 router.post('/add-greqi-image', addGreqiImage);
 router.delete('/greqi-image-delete/:id', isAuthenticated, deleteGreqiImage);
 router.get('/greqi-images', getAllGreqiImages);
+
+
+
+
 
 module.exports = router;

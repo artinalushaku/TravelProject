@@ -6,8 +6,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const sequelize = require('./db');
@@ -185,13 +183,3 @@ initializeDatabase();
 
 
 
-// Global error handling
-process.on('uncaughtException', (error) => {
-  console.error('Unhandled Exception:', error.message);
-  process.exit(1); // Force server exit on uncaught exceptions
-});
-
-process.on('unhandledRejection', (reason, promise) => {
-  console.error('Unhandled Rejection:', reason);
-  process.exit(1); // Force server exit on unhandled promise rejections
-});
