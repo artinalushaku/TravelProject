@@ -3,6 +3,7 @@ const express = require('express');
 
 
 
+
 const { 
   
   registerUser, registerUserForm, loginUser, getUsers, deleteUser, updateUser, verifyRole, countUsers 
@@ -67,6 +68,24 @@ const { abonohu, reserveOffer
 
 const { sendContactEmail
 } = require('../controllers/nodeKontaktForm');
+////////////////////////////////////////////////////////////////
+const { getEmployes, insertEmploye, updateEmploye } 
+= require('../controllers/employeController');
+
+const {getContracts, createContract, deleteContract}
+ = require('../controllers/contractController');
+
+ //////////////////////////////////////////////////////////////////
+router.post('/insertEmploye', insertEmploye);
+router.get('/getEmp', getEmployes);
+router.put('/updateEmp/:id', updateEmploye);
+router.put('/empUpdate/:id', updateEmploye);
+
+
+router.post('/insertCont', createContract);
+router.get('/getCont', getContracts);
+router.delete('/deleteCont/:id', deleteContract);
+//////////////////////////////////////////////////////////////////
 
 router.post('/reserveOffer', reserveOffer);
 router.post('/abonohu', abonohu);

@@ -433,7 +433,7 @@ function Home() {
         <span className="ml-2">{hotel.location}</span>
           </p>
               <p className="text-gray-600 mb-1">All Inclusive</p>
-              <p className="text-blue-600 font-bold">nga PP €{hotel.price}</p>
+              <p className="text-blue-600 font-bold"> €{hotel.price}</p>
             </div>
             <div className="ml-auto">
         
@@ -461,7 +461,7 @@ function Home() {
         <span className="ml-2">{hotel.location}</span>
           </p>
               <p className="text-gray-600 mb-1">All Inclusive</p>
-              <p className="text-blue-600 font-bold">nga PP €{hotel.price}</p>
+              <p className="text-blue-600 font-bold"> €{hotel.price}</p>
             </div>
             <div className="ml-auto">
         
@@ -496,7 +496,7 @@ function Home() {
               </div>
               <p className="text-sm text-gray-500">{hotel.location}</p>
               <div className="text-lg font-semibold mt-2">
-                nga PP €{hotel.price}
+                 €{hotel.price}
               </div>
             </div>
           </div>
