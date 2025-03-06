@@ -7,7 +7,11 @@ import { BrowserRouter as Router, Routes, Route, useLocation  } from 'react-rout
 ///////////////////////////////////////////////////////
 import Employe from './components/Employe';
 import Contract from './components/Contract';
-//////////////////////////////////////////////////////////
+
+
+
+//////////
+
 
 import Home from './components/Home/Home';
 import Login from './components/LoginRegister/Login';
@@ -60,6 +64,9 @@ import SliderBullgari from './aDashboard/tables/SliderBullgari';
 
 import Kontakt from './components/Kontakt/Kontakt';
 
+import Universiteti from './components/Universiteti';
+import Drejtimi from './components/Drejtimi';
+
 const App = () => {
  
   const location = useLocation();
@@ -83,6 +90,9 @@ const App = () => {
             <Route path="/maqedoni" element={<Maqedoni />} />
             <Route path="/employe" element={<Employe />} />
             <Route path="/contract" element={<Contract />} />
+            <Route path="/universiteti" element={<Universiteti />} />
+            <Route path="/drejtimi" element={<Drejtimi />} />
+            
 
             <Route path="/festateFundvitit" element={<FestateFundvitit />} />
             <Route path="/europecitybreak" element={<EuropeCityBreak />} />

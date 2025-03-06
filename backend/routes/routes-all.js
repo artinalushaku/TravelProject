@@ -2,7 +2,11 @@ const express = require('express');
 
 
 
+const { getUniversitetet, insertUniversity, updateUniversity, deleteUniversity }
+= require('../controllers/universitetiController');
 
+const {getDrejtimet, insertDrejtimi}
+ = require('../controllers/drejtimiController');
 
 const { 
   
@@ -75,6 +79,8 @@ const { getEmployes, insertEmploye, updateEmploye }
 const {getContracts, createContract, deleteContract}
  = require('../controllers/contractController');
 
+
+ 
  //////////////////////////////////////////////////////////////////
 router.post('/insertEmploye', insertEmploye);
 router.get('/getEmp', getEmployes);
@@ -85,6 +91,9 @@ router.put('/empUpdate/:id', updateEmploye);
 router.post('/insertCont', createContract);
 router.get('/getCont', getContracts);
 router.delete('/deleteCont/:id', deleteContract);
+
+
+
 //////////////////////////////////////////////////////////////////
 
 router.post('/reserveOffer', reserveOffer);
@@ -189,6 +198,17 @@ router.get('/qytetet', getAllQytetet);
 router.post('/add-greqi-image', addGreqiImage);
 router.delete('/greqi-image-delete/:id', isAuthenticated, deleteGreqiImage);
 router.get('/greqi-images', getAllGreqiImages);
+
+
+router.post('/insertUniversity', insertUniversity);
+router.get('/getUniversitetet', getUniversitetet);
+router.put('/updateUniversity/:id', updateUniversity);
+router.delete('/deleteUniversity/:id', deleteUniversity);
+
+
+router.post('/insertDrejtimi', insertDrejtimi);
+router.get('/getDrejtimet', getDrejtimet);
+
 
 
 
